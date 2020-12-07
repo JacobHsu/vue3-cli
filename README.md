@@ -8,6 +8,10 @@ Vue CLI v4.5.9
 ? Save this as a preset for future projects? No  
 ? Pick the package manager to use when installing dependencies: Yarn  
 
+## References
+
+https://github.com/iamshaunjp/Vue-3-Firebase
+
 ## Project setup
 ```
 yarn install
