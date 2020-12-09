@@ -9,7 +9,14 @@
       >.
     </p>
     <h3>Installed CLI Plugins</h3>
-    <Modal :heading="heading" :text="text" theme="sale" />
+    <Modal :heading="heading" :text="text" theme="sale" >
+      <h1>Ninja Givaway!</h1>
+      <p>Grab your ninja swag for half price!</p>
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+    </Modal>
     <ul>
       <li>
         <a
