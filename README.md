@@ -10,7 +10,8 @@ Vue CLI v4.5.9
 
 ## References
 
-https://github.com/iamshaunjp/Vue-3-Firebase
+https://github.com/iamshaunjp/Vue-3-Firebase  
+https://www.udemy.com/course/build-web-apps-with-vuejs-firebase  
 
 ## Project setup
 ```
