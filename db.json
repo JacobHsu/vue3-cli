@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "body": "json-server",
+      "tags": ["web","coding"]
+    },
+    {
+      "id": 2,
+      "title": "Welcome to the new blog",
+      "body": "Learn Vue 3",
+      "tags": ["web","coding"]
+    },
+    {
+        "id": 3,
+        "title": "top 5 js tips",
+        "body": "Learn js",
+        "tags": ["web","coding"]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

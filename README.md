@@ -8,6 +8,14 @@ Vue CLI v4.5.9
 ? Save this as a preset for future projects? No  
 ? Pick the package manager to use when installing dependencies: Yarn  
 
+## json-server
+
+https://www.npmjs.com/package/json-server
+
+cli> data/db.json
+
+`json-server --watch db.json`
+
 ## References
 
 https://github.com/iamshaunjp/Vue-3-Firebase  
