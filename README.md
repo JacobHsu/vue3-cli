@@ -18,7 +18,7 @@ cli> data/db.json
 
 ## References
 
-https://github.com/iamshaunjp/Vue-3-Firebase  
+[Vue-3-Firebase](https://github.com/iamshaunjp/Vue-3-Firebase)  
 https://www.udemy.com/course/build-web-apps-with-vuejs-firebase  
 
 ## Project setup
