@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
+// https://console.firebase.google.com/u/0/project/vue3-cli
 const firebaseConfig = {
     apiKey: "AIzaSyARZwCY5P_Z0WaQMEsSbzvgeDVhMmRbtBU",
     authDomain: "vue3-cli.firebaseapp.com",
@@ -14,7 +15,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 
 // init firestore service
-
 const projectFirestore = firebase.firestore()
+const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectFirestore }
+export { projectFirestore, timestamp }
