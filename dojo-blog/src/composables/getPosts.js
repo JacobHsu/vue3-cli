@@ -9,7 +9,7 @@ const getPosts = () => {
   const load = async () => {
     try {
       // https://console.firebase.google.com/u/0/project/vue3-cli/firestore/data~2Fposts~2FJloT7dFbo4z21TRJJyQm
-      const res = await projectFirestore.collection('posts').get()
+      const res = await projectFirestore.collection('posts').orderBy('createdAt','desc').get()
       // console.log(res.docs)
 
       posts.value = res.docs.map(doc => {
