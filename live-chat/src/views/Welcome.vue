@@ -22,7 +22,7 @@
 <script>
 import SignupForm from '../components/SignupForm.vue';
 import LoginForm from '../components/LoginForm.vue';
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 export default {
   components: { SignupForm, LoginForm },
@@ -56,5 +56,13 @@ export default {
   outline: none;
   color: #999;
   margin: 10px auto;
+}
+.welcome span {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.welcome button {
+  margin: 20px auto;
 }
 </style>
