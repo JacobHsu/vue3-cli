@@ -13,7 +13,7 @@ import { ref } from 'vue'
 import useSignup from '../composables/useSignup'
 
 export default {
-  setup() {
+  setup(props, context) {
     // refs
     const displayName = ref('')
     const email = ref('')
@@ -27,7 +27,7 @@ export default {
       // console.log('user signed up', displayName.value, email.value, password.value)
 
       if (!error.value) {
-        console.log('user signed up')
+        context.emit('signup')
       }    
     }
 
