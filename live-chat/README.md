@@ -15,6 +15,34 @@ for manipulating JavaScript dates in a browser & Node.js.
 
 firebase.json
 
+## firebase
+
+建構 > Firestore Database > Cloud Firestore > tag 規則
+
+```js
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2021, 11, 17);
+    }
+  }
+}
+```
+firestore.rules
+
+`firebase deploy --only firestore.rules`
+
+firebase.json
+
+```js
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+```
+
 ## Project setup
 ```
 npm install
