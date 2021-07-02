@@ -43,6 +43,13 @@ firebase.json
   },
 ```
 
+## gcp
+
+[Locking the API to a Domain](https://www.udemy.com/course/build-web-apps-with-vuejs-firebase/learn/lecture/23586062#overview)
+console.dev > Credentials > API keys Name `Browser Key` Click
+Application restrictions [] HTTP referrers(web sites) > Add AN ITEM `*.example.com/*`
+
+
 ## Project setup
 ```
 npm install
