@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import { projectAuth } from '../firebase/config'
 
 const error = ref(null)
+const isPending = ref(false)
 
 const signup = async (email, password, displayName) => {
   error.value = null
@@ -26,7 +27,7 @@ const signup = async (email, password, displayName) => {
 }
 
 const useSignup = () => {
-  return { error, signup, isPending  }
+  return { error, signup, isPending }
 }
 
 export default useSignup
