@@ -26,29 +26,31 @@
 
 <script>
 import { ref } from 'vue';
-import useStorage from '@/composables/useStorage'
-import useCollection from '@/composables/useCollection'
-import getUser from '@/composables/getUser'
-import { timestamp } from '@/firebase/config'
+import useStorage from '@/composables/useStorage';
+import useCollection from '@/composables/useCollection';
+import getUser from '@/composables/getUser';
+import { timestamp } from '@/firebase/config';
+import { useRouter } from 'vue-router';
 
 export default {
   setup() {
-    const { filePath, url, uploadImage } = useStorage()
-    const { error, addDoc } = useCollection('playlists')
-    const { user } = getUser()
-    
+    const { filePath, url, uploadImage } = useStorage();
+    const { error, addDoc } = useCollection('playlists');
+    const { user } = getUser();
+    const router = useRouter();
+
     const title = ref('');
     const description = ref('');
-    const file = ref(null)
-    const fileError = ref(null)
-    const isPending = ref(false)
+    const file = ref(null);
+    const fileError = ref(null);
+    const isPending = ref(false);
 
     const handleSubmit = async () => {
       if (file.value) {
-        isPending.value = true
+        isPending.value = true;
         // console.log(title.value, description.value, file.value);
-        await uploadImage(file.value)
-        await addDoc({
+        await uploadImage(file.value);
+        const res = await addDoc({
           title: title.value,
           description: description.value,
           userId: user.value.uid,
@@ -56,12 +58,12 @@ export default {
           coverUrl: url.value,
           filePath: filePath.value, // so we can delete it later
           songs: [],
-          createdAt: timestamp()
-        })
-        isPending.value = false
+          createdAt: timestamp(),
+        });
+        isPending.value = false;
         // console.log('image uploaded, url: ', url.value)
         if (!error.value) {
-          console.log('playlist added')
+          router.push({ name: 'PlaylistDetails', params: { id: res.id } });
         }
       }
     };
@@ -82,7 +84,14 @@ export default {
       }
     };
 
-    return { title, description, handleSubmit, fileError, handleChange, isPending };
+    return {
+      title,
+      description,
+      handleSubmit,
+      fileError,
+      handleChange,
+      isPending,
+    };
   },
 };
 </script>
