@@ -25,6 +25,21 @@ i  Using project music-playlist-a4b4c (music-playlist)
 ? What file should be used for Storage Rules? storage.rules  
 +  Wrote storage.rules
 
+## Firebase
+
+`firebase deploy --only firestore:rules`
+
+firestore.rules
+```js
+    match /playlists/{docId} {
+      allow read, write, create: if request.auth != null;
+      allow delete, update: if request.auth.uid == resource.data.userId;
+    }
+```
+
+`<button v-if="ownership" @click="handleDelete">Delete Playlist</button>`  
+`<button  @click="handleDelete">Delete Playlist</button>`
+
 ## Project setup
 ```
 npm install
