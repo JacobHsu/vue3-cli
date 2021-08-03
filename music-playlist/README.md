@@ -30,6 +30,7 @@ i  Using project music-playlist-a4b4c (music-playlist)
 `firebase deploy --only firestore:rules`
 
 firestore.rules
+
 ```js
     match /playlists/{docId} {
       allow read, write, create: if request.auth != null;
@@ -39,6 +40,22 @@ firestore.rules
 
 `<button v-if="ownership" @click="handleDelete">Delete Playlist</button>`  
 `<button  @click="handleDelete">Delete Playlist</button>`
+
+`firebase deploy --only storage:rules`
+
+storage.rules
+
+```js
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /playlists/{docId} {
+      allow read, write, create: if request.auth != null;
+      allow delete, update: if request.auth.uid == resource.data.userId;
+    }
+  }
+}
+```
 
 ## Project setup
 ```
