@@ -5,8 +5,19 @@
 </template>
 
 <script>
-export default {
+import getUser from '@/composables/getUser'
+import getCollection from '@/composables/getCollection'
 
+export default {
+  setup() {
+    const { user } = getUser()
+    const { documents: playlists } = getCollection(
+      'playlists', 
+      ['userId', '==', user.value.uid]
+    )
+    console.log(playlists) // 建立複合式索引 The query requires an index. You can create it here: 
+    return { playlists }
+  }
 }
 </script>
 
