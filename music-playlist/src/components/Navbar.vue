@@ -5,8 +5,13 @@
       <h1><router-link :to="{ name: 'Home' }">Muso Ninjas</router-link></h1>
       <div class="links">
         <div v-if="user">
-          <router-link :to="{ name: 'CreatePlaylist' }">Create Playlist</router-link>
-          <router-link :to="{ name: 'UserPlaylists' }">My Playlists</router-link>
+          <router-link :to="{ name: 'CreatePlaylist' }"
+            >Create Playlist</router-link
+          >
+          <router-link :to="{ name: 'UserPlaylists' }"
+            >My Playlists</router-link
+          >
+          <span>Hi there, {{ user.displayName }}</span>
           <button @click="handleClick">Logout</button>
         </div>
         <div v-else>
@@ -24,9 +29,9 @@
 //   - only show the signup and login links if we are not logged in
 //   - use the getUser composable to help
 
-import getUser from '../composables/getUser'
-import useLogout from '../composables/useLogout'
-import { useRouter } from 'vue-router'
+import getUser from '../composables/getUser';
+import useLogout from '../composables/useLogout';
+import { useRouter } from 'vue-router';
 
 export default {
   setup() {
@@ -70,5 +75,12 @@ nav .links a,
 button {
   margin-left: 16px;
   font-size: 14px;
+}
+span {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid #eee;
 }
 </style>
