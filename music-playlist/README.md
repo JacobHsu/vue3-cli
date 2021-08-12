@@ -57,6 +57,12 @@ service cloud.firestore {
 }
 ```
 
+## Deploy
+
+`firebase deploy`  
+
+Would you like to delete these indexes? Selecting no will continue the rest of the deployment. (y/N) `n`
+
 ## Project setup
 ```
 npm install
